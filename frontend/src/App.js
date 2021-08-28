@@ -1,9 +1,14 @@
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import HomePage from './NavPages/HomePage'
 
-
-function App() {
+const App = () => {
   return (
     <div className="App">
-      <h1>Global Spy Network</h1>
+      <Router>
+        <Switch>
+        <Route exact path='/' component={HomePage} />
+        </Switch>
+      </Router>
     </div>
   );
 }

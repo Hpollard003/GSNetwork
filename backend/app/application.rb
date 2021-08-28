@@ -8,7 +8,7 @@ class Application
       return [200, { 'Content-Type' => 'application/json' }, [ {:message => "test response!"}.to_json ]]
 
     else
-      resp.write "Path Not Found"
+      resp.write "Hello"
 
     end
 
