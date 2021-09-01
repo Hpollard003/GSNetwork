@@ -2,8 +2,8 @@ import Info from "../components/Info"
 
 const InfoPage = () => {
     return(
-        <div>
-            <h2>New Intelligence</h2>
+        <div className='text-center bg-dark'>
+            <h2 className='text-success'>New Intelligence</h2>
             <Info/>
         </div>
     )

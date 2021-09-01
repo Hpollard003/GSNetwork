@@ -3,7 +3,9 @@ import Home from '../components/Home'
 
 const HomePage = () => {
     return(
-        <Home/>
+        <div className='text-center'>
+        <Home/
+        ></div>
     )
 }
 
