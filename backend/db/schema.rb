@@ -10,19 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_31_172445) do
-
-  create_table "agents", force: :cascade do |t|
-    t.string "name"
-    t.string "status"
-    t.string "info"
-    t.string "mission"
-  end
+ActiveRecord::Schema.define(version: 2021_09_02_213645) do
 
   create_table "brokers", force: :cascade do |t|
     t.string "name"
     t.integer "rating"
-    t.integer "broker_id"
+    t.integer "job_id"
+  end
+
+  create_table "info", force: :cascade do |t|
+    t.string "name"
+    t.string "comment"
   end
 
   create_table "items", force: :cascade do |t|
@@ -36,6 +34,7 @@ ActiveRecord::Schema.define(version: 2021_08_31_172445) do
     t.integer "price"
     t.string "location"
     t.string "desc"
+    t.integer "broker_id"
   end
 
 end

@@ -3,7 +3,7 @@ class CreateBrokers < ActiveRecord::Migration[5.2]
     create_table :brokers do |b|
       b.string :name
       b.integer :rating
-      b.integer :broker_id
+      b.integer :job_id
     end
   end
 end

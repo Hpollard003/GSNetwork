@@ -3,63 +3,36 @@ import { NavLink } from "react-router-dom";
 
 const NavBar = () => {
   return (
-    <div className="nav justify-content-center">
-      <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+    <div className="nav justify-content-start display-6">
+      <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
-          <NavLink className="navbar-brand nav-link active" to="/">
-            Home
+          <NavLink className="navbar nav-link active" to="/">
+          <i class="fas fa-home"></i>
           </NavLink>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <div class="nav">
+            <ul class="navbar-nav ">
               <li class="nav-item"></li>
               <li class="nav-item">
-                <NavLink className="nav-link active" to="/Info">
-                  Info
+                <NavLink className="nav-link" to="/Info">
+                <i class="far fa-newspaper"></i>
                 </NavLink>
               </li>
               <li class="nav-item">
-                <NavLink className="nav-link active" to="/Jobs">
-                  Jobs
+                <NavLink className="nav-link" to="/Jobs">
+                <i class="fas fa-briefcase"></i>
                 </NavLink>
               </li>
               <li class="nav-item">
-                <NavLink className="nav-link active" to="/Market">
-                  Market
+                <NavLink className="nav-link" to="/Market">
+                <i class="fas fa-shopping-bag"></i>
                 </NavLink>
               </li>
               <li class="nav-item">
-                <NavLink className="nav-link active" to="/Brokers">
-                  Brokers
-                </NavLink>
-              </li>
-              <li class="nav-item">
-                <NavLink className="nav-link active" to="/Deaddrops">
-                  Deaddrops
+                <NavLink className="nav-link" to="/Brokers">
+                <i class="fas fa-user-tie"></i>
                 </NavLink>
               </li>
             </ul>
-            <form class="d-flex">
-              <input
-                class="form-control me-2"
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-              />
-              <button class="btn btn-outline-success" type="submit">
-                Search
-              </button>
-            </form>
           </div>
         </div>
       </nav>
