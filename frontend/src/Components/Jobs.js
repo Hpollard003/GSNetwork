@@ -19,19 +19,31 @@ export default class Jobs extends Component {
     .then((resp) => resp.json())
     .then(data => {
         if(data.length === this.state.jobs.length){
-            console.log(data.length)
+            console.log(data)
         } else {
             this.setState({jobs: data})
         }
     });
+    
   }
+
+  handleClick = (event) => {
+    fetch(`http://localhost:9292/concerts/${event.target.id}`, {
+        method: 'DELETE',
+    })
+        .then(res => res.json())
+        .then(data => this.setState({
+            jobs: [...this.state.jobs], data
+        }))
+}
+
 
   addJob = (job) => {
     this.setState({jobs : this.state.jobs.concat(job)})
 }
 
   renderJobs = () => {
-    return this.state.jobs.map(({ id, name, price, location, desc }, ind) => (
+    return this.state.jobs.map(({ id, name, price, location, desc}, ind) => (
       <Board className='row'
         key={ind}
         id={id}
@@ -39,7 +51,7 @@ export default class Jobs extends Component {
         price={price}
         location={location}
         desc={desc}
-        onClick={this.handleClick}
+        handleClick={this.handleClick}
       />
     ));
   };

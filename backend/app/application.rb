@@ -12,7 +12,7 @@ class Application
         data = JSON.parse(req.body.read)
         job = Job.create(data)
         return [200, { 'Content-Type' => 'application/json' }, [ job.to_json ]]
-      elsif req.path.match(/Jobs/) && @req.delete?
+      elsif @req.delete?
         id = @req.path_info.split('/Jobs/').last
         job = Job.find(id)
         job.delete
