@@ -1,11 +1,13 @@
 require 'faker'
-Intel.destroy_all
+Category.destroy_all
 Job.destroy_all
 
-5.times do
-    Intel.create(name: "Agent " + Faker::Ancient.god, comment: Faker::Lorem.paragraph , job_id: 1)
+1.times do
+    Category.create(name: "Bounty")
+    Category.create(name: "CounterIntelligence")
+    Category.create(name: "Escort")
 end
 
-5.times do
-    Job.create(name: "Capture " + Faker::Name.name, price: Faker::Number.number(digits: 9), location: Faker::Address.country, desc: "Dead or Alive")
+3.times do
+    Job.create(name: "Operation " + Faker::Ancient.god, price: Faker::Number.number(digits: 6), location: Faker::Address.country, desc: "Contact your handler after accepting mission.", category_id: 1)
 end

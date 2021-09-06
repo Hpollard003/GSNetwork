@@ -12,10 +12,8 @@
 
 ActiveRecord::Schema.define(version: 2021_09_04_020947) do
 
-  create_table "intels", force: :cascade do |t|
+  create_table "categories", force: :cascade do |t|
     t.string "name"
-    t.string "comment"
-    t.integer "job_id"
   end
 
   create_table "jobs", force: :cascade do |t|
@@ -23,6 +21,7 @@ ActiveRecord::Schema.define(version: 2021_09_04_020947) do
     t.integer "price"
     t.string "location"
     t.string "desc"
+    t.integer "category_id"
   end
 
 end

@@ -5,6 +5,7 @@ class CreateJobs < ActiveRecord::Migration[5.2]
       j.integer :price
       j.string :location
       j.string :desc
+      j.integer :category_id
     end
   end
 end

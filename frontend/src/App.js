@@ -1,9 +1,9 @@
 import { BrowserRouter as Router, NavLink, Route, Switch } from 'react-router-dom'
-import NavBar from './components/NavBar';
-import HomePage from './containers/HomePage'
-import JobsPage from './containers/JobsPage';
-import IntelPage from './containers/IntelPage';
+import NavBar from './Components/NavBar';
+import Home from './Containers/Home'
 import './App.css'
+import JobsBoard from './Containers/JobsBoard';
+
 
 const App = () => {
   return (
@@ -15,16 +15,15 @@ const App = () => {
             Global Spy Network <i className="fab fa-redhat"></i>
           </NavLink>
         </h1>
+        
         <NavBar/>
-
 
           <Switch>
 
-            <Route exact path='/' component={HomePage} />
+            <Route exact path='/' component={Home} />
 
-            <Route exact path='/Intel' component={IntelPage} />
+            <Route exact path='/Jobs' component={JobsBoard} />
 
-            <Route exact path='/Jobs' component={JobsPage} />
 
           </Switch>
 

@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import Board from './Board'
+import NewJobForm from './NewJobForm'
+
 
 export default class Jobs extends Component {
     state = {
@@ -14,21 +16,27 @@ export default class Jobs extends Component {
     }
 
     renderJobs = () => {
-        return this.state.jobs.map(({ id, name, price, location, desc }, ind) => (
+        return this.state.jobs.map(({ id, name, price, location, desc}, ind) => (
             <Board className='card' key={ind}
                 id={id}
                 name={name}
                 price={price}
                 location={location}
-                desc={desc}
+                desc={desc}  
+                onClick={this.handleClick} 
             />
         ))
     }
 
+    addJob = (job) => {
+        this.setState({jobs : this.state.comments.concat(job)})
+    }
+
     render() {
         return (
-            <div className='text-center'>
-                <div>
+            <div className='container'>
+                <div className='row'>
+                    <NewJobForm classname='card' addJob={this.addJob}/>
                     {this.renderJobs()}
                 </div>
             </div>
