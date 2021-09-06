@@ -7,10 +7,10 @@ class Application
     if req.path.match(/Jobs/) 
       if req.get?
         jobs = Job.all
-        # jobs_with_category = jobs.collect do |job|
-          # {id: job.id, name: job.name, price: job.price, location: job.location, desc: job.desc, category: job.category}
-        # end
-        return [200, { 'Content-Type' => 'application/json' }, [ jobs.to_json ]]
+        jobs_with_category = jobs.map do |job|
+          {id: job.id, name: job.name, price: job.price, location: job.location, desc: job.desc, category: job.category.name}
+        end
+        return [200, { 'Content-Type' => 'application/json' }, [ jobs_with_category.to_json ]]
       elsif req.post?
         data = JSON.parse(req.body.read)
         job = Job.create(data)

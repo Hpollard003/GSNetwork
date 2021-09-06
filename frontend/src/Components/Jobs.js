@@ -45,7 +45,7 @@ export default class Jobs extends Component {
   renderJobs = () => {
     // const category = this.state.jobs.category
     
-    return this.state.jobs.map(({ id, name, price, location, desc}, ind) => (
+    return this.state.jobs.map(({ id, name, price, location, desc, category}, ind) => (
       <Board className='row'
         key={ind}
         id={id}
@@ -53,7 +53,7 @@ export default class Jobs extends Component {
         price={price}
         location={location}
         desc={desc}
-        // category={category}
+        category={category}
         handleClick={this.handleClick}
       />
     ));

@@ -11,7 +11,8 @@ export default class NewJobForm extends Component {
       price: "",
       location: "",
       desc: "",
-      category_id: ""
+      category_id: "",
+      category: ""
     }
 }
 
@@ -94,11 +95,11 @@ export default class NewJobForm extends Component {
             onChange={this.changeHandler}
             />
           </div>
-          <div id='category' className='col'>
+          <div id='category_id' className='col'>
             <input 
             type='text' 
             name='category_id' 
-            placeholder='Category#' 
+            placeholder='Category_id#' 
             value={category_id}
             onChange={this.changeHandler}
             />
