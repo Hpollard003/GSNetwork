@@ -19,10 +19,7 @@ export default class NewJobForm extends Component {
     // below i set or render the new state of the name value with whatever is being input from the user
     this.setState({[e.target.name]: e.target.value})
   }
-  
-  addJob = (job) => {
-    this.setState({jobForm : this.state.jobs.concat(job)})
-  }
+
   
   handleFormSubmit = (event) => {
     event.preventDefault()

@@ -19,7 +19,7 @@ export default class Jobs extends Component {
     .then((resp) => resp.json())
     .then(data => {
         if(data.length === this.state.jobs.length){
-            console.log(data)
+            console.log(data.length)
         } else {
             this.setState({jobs: data})
         }
@@ -28,7 +28,7 @@ export default class Jobs extends Component {
   }
 
   handleClick = (event) => {
-    fetch(`http://localhost:9292/concerts/${event.target.id}`, {
+    fetch(`http://localhost:9292/Jobs/${event.target.id}`, {
         method: 'DELETE',
     })
         .then(res => res.json())
@@ -43,6 +43,8 @@ export default class Jobs extends Component {
 }
 
   renderJobs = () => {
+    // const category = this.state.jobs.category
+    
     return this.state.jobs.map(({ id, name, price, location, desc}, ind) => (
       <Board className='row'
         key={ind}
@@ -51,6 +53,7 @@ export default class Jobs extends Component {
         price={price}
         location={location}
         desc={desc}
+        // category={category}
         handleClick={this.handleClick}
       />
     ));

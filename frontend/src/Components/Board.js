@@ -8,6 +8,7 @@ const Board = (props) => (
         <h5 className="card-title">Location - {props.location}</h5>
         <p className="card-text">{props.desc}</p>
         <h2>${props.price}</h2>
+        {/* <h3>{props.category}</h3> */}
       </div>
     </div>
   </div>
