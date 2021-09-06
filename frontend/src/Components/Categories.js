@@ -29,9 +29,7 @@ export default class Categories extends Component {
     render() {
         return (
             <div className='text-start text-success'>
-                <div>
-                {this.renderCategories()}
-                </div>
+               {this.renderCategories()}
             </div>
         )
     }

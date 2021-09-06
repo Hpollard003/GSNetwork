@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 const NavBar = () => {
   return (
-    <div className="display-6">
+    <div className="display-6 text-center">
         <div className="nav">        
             <h1 className='nav'>
                 <NavLink className="nav-link active" to="/"><i className="fas fa-home"></i></NavLink>

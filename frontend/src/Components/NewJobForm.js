@@ -3,24 +3,27 @@ import Categories from './Categories'
 
 
 
-const jobForm = {
-    name: '',
-    price: "",
-    location: '',
-    desc: '',
-    category_id: ""
-  }
-
-
 export default class NewJobForm extends Component {
- 
-  state = {...jobForm}
+  constructor(props) {
+    super(props)
+    this.state = {
+      name: "",
+      price: "",
+      location: "",
+      desc: "",
+      category_id: ""
+    }
+}
 
   changeHandler = (e) => {
     // below i set or render the new state of the name value with whatever is being input from the user
     this.setState({[e.target.name]: e.target.value})
   }
-
+  
+  addJob = (job) => {
+    this.setState({jobForm : this.state.jobs.concat(job)})
+  }
+  
   handleFormSubmit = (event) => {
     event.preventDefault()
     fetch('http://localhost:9292/Jobs', {
@@ -40,16 +43,22 @@ export default class NewJobForm extends Component {
     .then(response => response.json())
     .then(data => this.props.addJob(data))
     .catch(error => console.error(error))
-    this.setState(jobForm)
+    this.setState({
+      name: "",
+      price: "",
+      location: "",
+      desc: "",
+      category_id: ""
+    })
+    
 }
 
 
   render() {
     const {name, price, location, desc, category_id} = this.state
     return (
-      <div className='text-start card-body'>
+      <div>
           <h3>Post New Jobs Below</h3>
-          <Categories/>
         {/* this form takes the user id and comment from the user */}
         <form id='form1' onSubmit={this.handleFormSubmit}>
           <div id='name' className='col'>
@@ -99,6 +108,7 @@ export default class NewJobForm extends Component {
           </div>
           <button className="btn btn-success" type='submit'>Post</button>
         </form>
+        <Categories/>
       </div>
     )
   }
