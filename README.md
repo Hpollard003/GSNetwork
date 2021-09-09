@@ -1,5 +1,8 @@
-# Phase 3 Project
-## Global Spy Network 
+# Phase 3 Project Global Spy Network 
+The GSN is your best freind when looking for new spy work in the modern era. Post 
+new jobs on our job board. Delete someone elses old job in time to not get yourself killed or 
+captured. And feel free to read through our jobs list, payment will be provided after
+proof of completion.
 
 ## Requirements
 
@@ -15,17 +18,12 @@
 
 ## Getting Started
 
-Clone down this repository. A basic Rack app is located in the `backend` folder.
-
 First, cd into the `backend` folder and run `bundle install` in your backend
 folder to install your gems.
 
-The `app/application.rb` file has an example GET route. Replace this route with
-routes for your project!
-
 **Start your server with:**
 
-```sh
+```
 shotgun --port=9292
 ```
 
@@ -35,19 +33,9 @@ shotgun --port=9292
 > automatically reload your Rack server. You may still need to refresh your
 > browser to see changes.
 
-Your backend and your frontend should be in two different repositories. Create a
-new repository in a separate folder with a React app for your frontend using
-[create-react-app][].
+**Start up the front-end**
 
-### Fetch Example
-
-Your React app should make fetch requests to your Rack backend! Here's an
-example:
-
-```js
-fetch("http://localhost:9292/test")
-  .then((res) => res.json())
-  .then(console.log);
+Next, cd into the `front-end` folder and run :
 ```
-
-[create-react-app]: https://create-react-app.dev/docs/getting-started
+npm start 
+```
