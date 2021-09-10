@@ -1,14 +1,23 @@
 import React from "react";
 
 const Board = (props) => (
-  <div className='col-sm py-4 ' id={props.id}>
+  <div className="col-sm py-4 " id={props.id}>
     <div className="card" style={{ width: "18rem" }}>
-      <h5 className="card-header bg-dark bg-gradient text-primary">{props.name}   <button className="bg-dark text-danger" id={props.id} onClick={props.handleClick}>X</button></h5>
+      <h5 className="card-header bg-dark bg-gradient text-primary">
+        {props.name}{" "}
+        <button
+          className="bg-dark text-danger"
+          id={props.id}
+          onClick={props.handleClick}
+        >
+          X
+        </button>
+      </h5>
       <div className="card-body">
         <h5 className="card-title">Location - {props.location}</h5>
         <p className="card-text">{props.desc}</p>
         <h2>${props.price}</h2>
-        <h3>{props.category}</h3>
+        <h3>Mission {props.category}</h3>
       </div>
     </div>
   </div>

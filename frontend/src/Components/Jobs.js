@@ -16,56 +16,58 @@ export default class Jobs extends Component {
 
   componentDidUpdate = () => {
     fetch("http://localhost:9292/Jobs")
-    .then((resp) => resp.json())
-    .then(data => {
-        if(data.length === this.state.jobs.length){
-            console.log(data.length)
+      .then((resp) => resp.json())
+      .then((data) => {
+        if (data.length === this.state.jobs.length) {
+          console.log(data.length);
         } else {
-            this.setState({jobs: data})
+          this.setState({ jobs: data });
         }
-    });
-    
-  }
+      });
+  };
 
   handleClick = (event) => {
     fetch(`http://localhost:9292/Jobs/${event.target.id}`, {
-        method: 'DELETE',
+      method: "DELETE",
     })
-        .then(res => res.json())
-        .then(data => this.setState({
-            jobs: [...this.state.jobs], data
-        }))
-}
-
+      .then((res) => res.json())
+      .then((data) =>
+        this.setState({
+          jobs: [...this.state.jobs],
+          data,
+        }) 
+      ); 
+  }; 
 
   addJob = (job) => {
-    this.setState({jobs : this.state.jobs.concat(job)})
-}
+    this.setState({ jobs: this.state.jobs.concat(job) });
+  };
 
   renderJobs = () => {
     // const category = this.state.jobs.category
-    
-    return this.state.jobs.map(({ id, name, price, location, desc, category}, ind) => (
-      <Board className='row'
-        key={ind}
-        id={id}
-        name={name}
-        price={price}
-        location={location}
-        desc={desc}
-        category={category}
-        handleClick={this.handleClick}
-      />
-    ));
+
+    return this.state.jobs.map(
+      ({ id, name, price, location, desc, category }, ind) => (
+        <Board
+          className="row"
+          key={ind}
+          id={id}
+          name={name}
+          price={price}
+          location={location}
+          desc={desc}
+          category={category}
+          handleClick={this.handleClick}
+        />
+      )
+    );
   };
 
   render() {
     return (
       <div className="card bg-dark bg-gradient container">
-        <NewJobForm addJob={this.addJob}/>
-        <div className='row'>
-        {this.renderJobs()}
-        </div>
+        <NewJobForm addJob={this.addJob} />
+        <div className="row">{this.renderJobs()}</div>
       </div>
     );
   }
